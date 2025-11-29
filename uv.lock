@@ -1,0 +1,23 @@
+version = 1
+revision = 3
+requires-python = ">=3.13"
+
+[[package]]
+name = "my-project"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "simplefix" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "simplefix" }]
+
+[[package]]
+name = "simplefix"
+version = "1.0.17"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/2b/9a/e17706ff04ca5d0f7d10fbefe957bd85c11bb9d47ffd7a3b0f125c5f4c0f/simplefix-1.0.17.tar.gz", hash = "sha256:d7f86666f508b11a8839d26ad66d63eaa5e53e6d0d4e23f5ef065feead60e658", size = 32985, upload-time = "2023-09-12T08:43:42.124Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/20/e3/cabeb722e75488b53a5d509d4ee1a0ad30683ade7210e6ea593c654ed410/simplefix-1.0.17-py2.py3-none-any.whl", hash = "sha256:da15798755447b9719f8688ca4cc29ee20c6d94d3227f22f60e04dcf347a2c68", size = 27268, upload-time = "2023-09-12T08:43:39.982Z" },
+]
