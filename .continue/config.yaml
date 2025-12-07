@@ -1,0 +1,121 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+
+# name: Local Optimized Setup
+# version: 1.0.0
+# schema: v1
+
+models:
+  # Gros modèle → intelligence + refactor
+  - name: Codestral (Chat)
+    provider: ollama
+    model: codestral
+    apiBase: http://localhost:11434
+    roles: [chat, edit, apply, summarize]
+    defaultCompletionOptions:
+      temperature: 0.15
+      maxTokens: 4096
+
+  # Petit modèle → autocomplete ultra-rapide
+  - name: Qwen2.5 Coder 1.5B (Autocomplete)
+    provider: ollama
+    model: qwen2.5-coder:1.5b
+    apiBase: http://localhost:11434
+    roles: [autocomplete]
+    defaultCompletionOptions:
+      temperature: 0.0
+      maxTokens: 128
+
+  # - name: Qwen2.5 Coder 7B
+  #   provider: ollama
+  #   model: qwen2.5-coder:7b
+  #   apiBase: http://localhost:11434
+  #   roles:
+  #     - chat
+  #     - edit
+  #     - apply
+  #     - autocomplete
+  #     - summarize
+  #   defaultCompletionOptions:
+  #     temperature: 0.15
+  #     maxTokens: 4096
+
+
+# models:
+#   - name: Codestral (Ollama)
+#     provider: ollama
+#     model: codestral
+#     apiBase: http://localhost:11434      # adjust port if yours is different
+#     roles:
+#       - chat
+#       - edit
+#       - apply
+#       - autocomplete   # optionally include autocomplete if you want code completion
+#     defaultCompletionOptions:
+#       temperature: 0.2
+#       maxTokens: 4096
+  # High-IQ chat / analysis / refactor / bugfixing
+  # - name: Qwen2.5 Coder 14B (Chat)
+  #   provider: ollama
+  #   model: qwen2.5-coder:14b
+  #   apiBase: http://localhost:11434
+  #   roles: [chat, edit, apply, summarize]
+  #   defaultCompletionOptions:
+  #     temperature: 0.15
+  #     maxTokens: 4096
+
+  # # Extremely fast autocomplete (light model)
+  # - name: Qwen2.5 Coder 1.5B (Autocomplete)
+  #   provider: ollama
+  #   model: qwen2.5-coder:1.5b
+  #   apiBase: http://localhost:11434
+  #   roles: [autocomplete]
+  #   defaultCompletionOptions:
+  #     temperature: 0.0
+  #     maxTokens: 256
+  # Main chat/analysis model
+  # - name: Qwen2.5 Coder 14B (Chat)
+  #   provider: ollama
+  #   model: qwen2.5-coder:14b
+  #   apiBase: http://localhost:11434
+  #   roles: [chat, edit, apply, summarize]
+  #   defaultCompletionOptions:
+  #     temperature: 0.2
+  #     maxTokens: 4096
+
+  # # Autocomplete model (same model or a smaller one if you prefer speed)
+  # - name: Qwen2.5 Coder Autocomplete
+  #   provider: ollama
+  #   model: qwen2.5-coder:14b
+  #   apiBase: http://localhost:11434
+  #   roles: [autocomplete]
+  #   defaultCompletionOptions:
+  #     temperature: 0.0
+  #     maxTokens: 256
+      
+    # apiBase: http://localhost:11434
+    # apiBase: http://localhost:11434/api/generate
+    # roles:
+    #   - chat
+    #   - edit
+    #   - autocomplete
+    #   - apply
+    # defaultCompletionOptions: 
+    #   - contextLength: 256000
+    # autocompleteOptions:
+    #   debounceDelay: 250
+    #   maxPromptTokens: 1024
+    #   onlyMyCode: true
+    # capabilities:
+    #   - tool_use
+    #   - image_input
+
+# tabAutocompleteModel:
+#   provider: "ollama"
+#   model: "mistral/codestral"
+
+# # (Optionnel) activer l’inférence plus longue, utile pour coder
+# systemMessage: |
+#   You are Codestral running on Ollama. Act as a coding assistant.
+    
